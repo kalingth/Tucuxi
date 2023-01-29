@@ -17,5 +17,5 @@ function Tucuxi(service, aws_key, aws_skey, region="us-east-1"){
       throw new ServiceNotSetError("The service name is required for that application!");
   }
 
-  return identifiedClass(aws_key, aws_skey, region);
+  return new identifiedClass(aws_key, aws_skey, region);
 }

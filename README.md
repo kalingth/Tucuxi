@@ -59,3 +59,22 @@ function sendFileToS3(){
     Logger.log(response);
 }
 ```
+
+You can use a frontend most friendly to make your requests. Here is an exemple:
+
+```javascript
+
+const awsKey = "";
+const awsSecret = "";
+
+function sendFileToS3(){
+    const bucketName = "kalingth";
+    const filename = "HelloWorld.json";
+    const fileBody = '{"Text": "Hello World!"}';
+    const contentType = "application/json";
+
+    const tucuxi = Tucuxi("s3", awsKey, awsSecret);
+    const response = tucuxi.uploadFileToS3(bucketName, filename, fileBody, contentType);
+    Logger.log(response);
+}
+```
