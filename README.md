@@ -60,7 +60,7 @@ function sendFileToS3(){
 }
 ```
 
-You can use a frontend most friendly to make your requests. Here is an exemple:
+You can use a most friendly integration to make your requests. Here is an exemple:
 
 ```javascript
 
