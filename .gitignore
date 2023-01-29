@@ -1,3 +1,5 @@
 *.py
 venv/
 **/venv/
+.vscode/
+**/.vscode/
