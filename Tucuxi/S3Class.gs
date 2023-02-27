@@ -13,13 +13,14 @@ class TucuxiS3 {
    * @param {string} bucket - The S3 bucket name to upload the file
    * @param {string} filename - The name of the file to upload
    * @param {string} body - The contents of the file to upload
-   * @param {string} [contentType='application/json'] - The MIME type of the contents of the file
    * 
    * @return {Object} The response object returned by Amazon S3 
    */
-  uploadFileToS3(bucket, filename, body, contentType="application/json"){
+  uploadFileToS3(bucket, filename, body){
+    const contentType = "application/octet-stream"
     const method = "PUT";
     const uri = `https://${bucket}.s3.amazonaws.com/${filename}`;
+    body = Utilities.newBlob(body, contentType).getBytes();
     const headers = getAuthHeaders(method, uri, this, contentType, body);
     return performRequest(method, uri, headers, body);
   }

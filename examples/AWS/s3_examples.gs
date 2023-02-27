@@ -4,10 +4,9 @@ function sendFileToS3() {
   const bucket = "kalingth";
   const body = JSON.stringify({ hello: "world" });
   const key = "tests/hello.json";
-  const contentType = "application/json";
 
   const tucuxiClient = new TucuxiS3(awsKey, awsSecret);
-  const response = tucuxiClient.uploadFileToS3(bucket, key, body, contentType);
+  const response = tucuxiClient.uploadFileToS3(bucket, key, body);
   Logger.log(response);
 }
 
