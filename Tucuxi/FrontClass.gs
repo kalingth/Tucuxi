@@ -7,7 +7,7 @@ function Tucuxi(service, aws_key, aws_skey, region="us-east-1"){
     "sns": TucuxiSNS
   };
 
-  const normalizedService = service.toLower();
+  const normalizedService = service.toLowerCase();
   const identifiedClass =  mapping[normalizedService];
 
   if(identifiedClass === undefined){
