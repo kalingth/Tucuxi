@@ -52,10 +52,9 @@ function sendFileToS3(){
     const bucketName = "kalingth";
     const filename = "HelloWorld.json";
     const fileBody = '{"Text": "Hello World!"}';
-    const contentType = "application/json";
 
     const tucuxi = new TucuxiS3(awsKey, awsSecret);
-    const response = tucuxi.uploadFileToS3(bucketName, filename, fileBody, contentType);
+    const response = tucuxi.uploadFileToS3(bucketName, filename, fileBody);
     Logger.log(response);
 }
 ```
@@ -71,10 +70,9 @@ function sendFileToS3(){
     const bucketName = "kalingth";
     const filename = "HelloWorld.json";
     const fileBody = '{"Text": "Hello World!"}';
-    const contentType = "application/json";
 
     const tucuxi = Tucuxi("s3", awsKey, awsSecret);
-    const response = tucuxi.uploadFileToS3(bucketName, filename, fileBody, contentType);
+    const response = tucuxi.uploadFileToS3(bucketName, filename, fileBody);
     Logger.log(response);
 }
 ```
